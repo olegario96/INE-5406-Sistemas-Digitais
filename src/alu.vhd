@@ -25,7 +25,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 --! ALU brief description: ALU for didatic MIPS MultiCycle from Patterson.
---! It's possible to sum, sub, and, or the operands and use set less than.    
+--! It's possible to `sum`, `sub`, `and`, `or` the operands and use set less than.    
 
 entity ALU is
 	generic(width: natural := 8);
