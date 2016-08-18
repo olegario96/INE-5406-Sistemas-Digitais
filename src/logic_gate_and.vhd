@@ -17,17 +17,22 @@
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
+--! Use standard library
 library IEEE;
+--! Use logic elements.
 use IEEE.std_logic_1164.all;
+
+--! Logic gate AND descriptio: a simple implementation of the and logic operation.
 
 entity logic_gate_and is
 	port(
-		input0, input1: in std_logic;
-		output: 			 out std_logic
+		input0, input1: 	         in std_logic; --! Operands.
+		output: 			 out std_logic --! Result
 	);
 
 end entity;
 
+--! @brief Implementation of the logic operation, using the keyword AND.
 architecture logic_gate_and_arch of logic_gate_and is
 begin
 	output <= input0 and input1;
