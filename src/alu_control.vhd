@@ -17,18 +17,25 @@
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
+--! Use standard library
 library IEEE;
+--! Use logic elements
 use IEEE.std_logic_1164.all;
+
+--! ALU_control brief descriptio: The ALU control. It receives 2 bits from the control block and the 5 final bits from the
+--! word.
 
 entity ALU_control is
 	port(
-		funct:   in std_logic_vector(5 downto 0);
-		ULAOp:  in std_logic_vector(1 downto 0);
-		output: out std_logic_vector(2 downto 0)
+		funct:   in std_logic_vector(5 downto 0); --! 5 final bits from the word.
+		ULAOp:   in std_logic_vector(1 downto 0); --! 2 bits from the control block.
+		output:  out std_logic_vector(2 downto 0) --! ALU_op
 	);
 	
 end entity;
 
+--! @brief The ULAOp and funct will define witch operation will be done. This choose was made using a table of states 
+--! from the book Computer Organization and Design 3rd edition.
 architecture ALU-control_arch of ALU_control is 
 begin
 	output <= "010" when ((ULAOp = "10") and (funct = "100000")) else 
