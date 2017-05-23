@@ -36,7 +36,7 @@ end entity;
 
 --! @brief The ULAOp and funct will define witch operation will be done. This choose was made using a table of states 
 --! from the book Computer Organization and Design 3rd edition.
-architecture ALU-control_arch of ALU_control is 
+architecture ALU_control_arch of ALU_control is 
 begin
 	output <= "010" when ((ULAOp = "10") and (funct = "100000")) else 
 				 "110" when ((ULAOp = "10") and (funct = "100010")) else
